@@ -12,7 +12,7 @@ source:
   sha256: 94db4eb51471d3ffbc91704337645e5b418c613fad5d9369a7f2229b0480f913
 
 build:
-  number: 5
+  number: 6
   rpaths:
     - lib/R/lib/
     - lib/
@@ -30,6 +30,9 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-rcolorbrewer               # [build_platform != target_platform]
+    - r-rcpp >=0.9.4               # [build_platform != target_platform]
   host:
     - r-base
     - r-rcolorbrewer
@@ -48,7 +51,6 @@ about:
   home: http://logfc.wordpress.com
   license: GPL-2.0-or-later
   summary: Generating Tag and Word Clouds.
-  license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
