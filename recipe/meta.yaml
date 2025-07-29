@@ -1,4 +1,4 @@
-{% set version = '0.6' %}
+{% set version = "0.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tagcloud_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tagcloud/tagcloud_{{ version }}.tar.gz
-  sha256: 94db4eb51471d3ffbc91704337645e5b418c613fad5d9369a7f2229b0480f913
+  sha256: 2c067ac327944e230f605feb396e05481c142e2a0688b540dd04e2c1cedb8f29
 
 build:
-  number: 6
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
